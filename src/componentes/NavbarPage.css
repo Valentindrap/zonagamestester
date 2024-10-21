@@ -1,0 +1,43 @@
+:root{
+    --primary: #0c0449;
+    --secondary: #4229dd;
+    --white: #fff;
+    --gray: #9b9b9b;
+}
+
+.ContenedorNavbar{
+    background-color: rgb(255, 255, 255);
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 2px 2px 4px 8px rgba(0, 0, 0, 0.158);
+}
+.navbarizquierda{
+    height: 100%;
+    width: 100%;
+    padding: 0 0 0 50px;
+}
+
+.navbarcenter{
+    height: 100%;
+    width: 100%;
+    padding: 50px;
+}
+.navbarderecha{
+    height: 100%;
+    width: 100%;
+    text-align: end;
+    padding: 15px 20px 0 0;
+}
+
+.imagenlogo{
+    padding: 10px 0px 0 0;
+    height: 80%;
+}
+
+.User-circle{
+    font-size: 45px;
+    cursor: pointer;
+}
+
+/*busqueda*/
