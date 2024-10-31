@@ -16,22 +16,23 @@ function Registro({ setRegistro }) {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ email, contrasena }), // Asegúrate de que estas variables estén definidas
+            body: JSON.stringify({ email, contrasena }),
         });
     
         const data = await response.json();
     
         if (data.mensaje === "Inicio de sesión exitoso") {
+            localStorage.setItem('token', data.token); // Almacena el token
             setMensaje("Inicio de sesión exitoso");
             setTimeout(() => {
-                navigate('/perfil');
+                navigate('/perfil'); // Redirigir al perfil
             }, 1500);
         } else {
             setMensaje(data.mensaje);
         }
-    };
+    }
     
-
+    
     return (
         <div className="container-registro">
             <form onSubmit={handleSubmit}>

@@ -5,16 +5,9 @@
     align-items: center;
 }
 
-.contenedor-anuncios {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 1200px;
-    margin: 20px auto; /* Centrando el contenedor */
-}
 
 .anuncio {
-    width: auto;
+
     height: auto;
     background-color: #f0f0f0;
     border-radius: 8px;
@@ -32,7 +25,8 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    width: 70%;
+    width: 100%; /* Cambiar a 100% para mejor adaptabilidad */
+    max-width: 800px; /* Ancho máximo para el contenedor */
 }
 
 .MedPestañaJuegos-container {
@@ -85,7 +79,7 @@ iframe {
     white-space: pre-wrap; /* Respetar saltos de línea */
 }
 
-.fullscreen-btn { /* Espacio superior */
+.fullscreen-btn {
     padding: 2px 5px;
     background-color: white;
     color: black;
@@ -99,13 +93,48 @@ iframe {
     transform: scale(1.05); /* Efecto de aumento al pasar el mouse */
 }
 
-.fullscreen-btn-container{
+.fullscreen-btn-container {
     display: flex;
     justify-content: center;
 }
 
-
-
+/* Fullscreen adjustments */
 :fullscreen iframe {
     height: 100%; /* El iframe ocupa toda la altura de la pantalla */
+}
+
+/* Estilos para el botón de favoritos */
+.btn-favoritos {
+    background-color: #ff4081; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de la fuente */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+    transition: background-color 0.3s ease; /* Transición suave para el color */
+    width: 100%; /* Ancho completo para mejor adaptabilidad */
+    max-width: 200px; /* Ancho máximo */
+    margin: 10px auto; /* Centrar el botón */
+}
+
+.btn-favoritos:hover {
+    background-color: #e91e63; /* Color de fondo al pasar el ratón */
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+
+    iframe {
+        height: 400px; /* Ajustar altura del iframe en pantallas pequeñas */
+    }
+
+    .Nombre-PestañaJuegos {
+        flex-direction: column; /* Apilar nombre en pantallas pequeñas */
+        align-items: center; /* Centrar contenido */
+    }
+
+    .IzqNombre-PestañaJuegos, .DerNombre-PestañaJuegos {
+        font-size: 1.2rem; /* Ajustar tamaño de fuente */
+    }
 }

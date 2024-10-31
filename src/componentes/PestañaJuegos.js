@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useLocation } from "react-router-dom";
 import NavbarPage from "./NavbarPage";
 import "../componentes/PestañaJuegos.css";
@@ -7,6 +7,7 @@ function PestañaJuegos() {
     const location = useLocation();
     const juegoSeleccionado = location.state?.juego;
     const gameContainerRef = useRef(null);
+    const [isFavorito, setIsFavorito] = useState(false);
 
     const toggleFullScreen = () => {
         if (!document.fullscreenElement) {
@@ -18,8 +19,26 @@ function PestañaJuegos() {
         }
     };
 
+    const handleFavoritoClick = () => {
+        let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+        
+        if (isFavorito) {
+            // Si ya es favorito, eliminarlo
+            favoritos = favoritos.filter(favorito => favorito.id !== juegoSeleccionado.id);
+            setIsFavorito(false);
+        } else {
+            // Agregar a favoritos
+            favoritos.push(juegoSeleccionado);
+            setIsFavorito(true);
+        }
+        
+        localStorage.setItem('favoritos', JSON.stringify(favoritos));
+    };
+
     useEffect(() => {
-        console.log(juegoSeleccionado); // Para verificar el objeto
+        const favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+        const isFav = favoritos.some(favorito => favorito.id === juegoSeleccionado.id);
+        setIsFavorito(isFav);
     }, [juegoSeleccionado]);
 
     if (!juegoSeleccionado) {
@@ -35,7 +54,7 @@ function PestañaJuegos() {
                     <div className="MedPestañaJuegos-container" ref={gameContainerRef}>
                         <div className="fullscreen-btn-container">
                             <button className="btn btn-primary fullscreen-btn" onClick={toggleFullScreen}>
-                                <i className="bi bi-fullscreen "></i> {/* Icono de pantalla completa */}
+                                <i className="bi bi-fullscreen "></i>
                                 {document.fullscreenElement ? " Salir de Pantalla Completa" : " Pantalla Completa"}
                             </button>
                         </div>
@@ -46,6 +65,9 @@ function PestañaJuegos() {
                         <div className="Nombre-PestañaJuegos">
                             <div className="IzqNombre-PestañaJuegos">
                                 <p>{juegoSeleccionado.nombre}</p>
+                                <button onClick={handleFavoritoClick} className="btn btn-favoritos">
+                                   {isFavorito ? "Eliminar de Favoritos" : "Agregar a Favoritos"}
+                                </button>
                             </div>
                             <div className="DerNombre-PestañaJuegos">
                                 <p><i className="bi bi-star"></i> Calificación: {juegoSeleccionado.calificacion}</p>

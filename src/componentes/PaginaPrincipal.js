@@ -181,7 +181,7 @@ function PaginaPrincipal() {
         <div className="pagina-principal">
             <NavbarPage />
             <div className="contenedor-anuncios">
-                <div className="anuncio">Anuncio Izquierdo</div>
+                <div className="anuncio"></div>
                 <div className="catalogo-juegos">
                     <h1 className="juegos-titulo">Catálogo de Juegos</h1>
                     <div className="search-container">
@@ -211,7 +211,7 @@ function PaginaPrincipal() {
                         )}
                     </ul>
                 </div>
-                <div className="anuncio">Anuncio Derecho</div>
+                <div className="anuncio"></div>
             </div>
         </div>
     );

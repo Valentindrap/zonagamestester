@@ -1,0 +1,104 @@
+/* perfil.css */
+
+.perfil-container {
+    max-width: 600px;
+    margin: auto;
+    margin-top: 40px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.perfil-title {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.perfil-message {
+    color: #d9534f;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.perfil-info strong {
+    color: #555;
+}
+
+.perfil-logout-button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 15px;
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.perfil-logout-button:hover {
+    background-color: #c9302c;
+}
+
+.portadaperfil {
+    width: 100%; /* Ajuste a 100% para que se adapte mejor */
+    max-width: 80px; /* Ancho máximo para la imagen */
+    height: auto;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+.favoritos-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.favorito-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #eaeaea;
+    border-radius: 5px;
+    background-color: #fff;
+    transition: box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.favorito-item:hover {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.favorito-info {
+    flex-grow: 1; /* Para que el texto ocupe el espacio restante */
+}
+
+h3 {
+    margin: 0;
+    font-size: 1.2em;
+    color: #333;
+}
+
+p {
+    margin: 5px 0;
+    color: #666;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    .perfil-container {
+        padding: 15px; /* Reduce el padding en pantallas pequeñas */
+    }
+
+    .favorito-item {
+        flex-direction: column; /* Apilar el contenido verticalmente */
+        align-items: flex-start; /* Alinear a la izquierda */
+    }
+
+    .favorito-info {
+        margin-top: 10px; /* Espaciado entre imagen y texto */
+    }
+}
