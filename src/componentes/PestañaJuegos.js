@@ -49,7 +49,7 @@ function PestañaJuegos() {
         <div>
             <NavbarPage />
             <div className="contenedor-anuncios">
-                <div className="anuncio"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuerpq_ADZW4Z1VNjKSaUGeO1OkK7I4WDKuQ&s"></img></div>
+                <div className="anuncio"></div>
                 <div className="PestañaJuegos-container">
                     <div className="MedPestañaJuegos-container" ref={gameContainerRef}>
                         <div className="fullscreen-btn-container">
@@ -79,7 +79,7 @@ function PestañaJuegos() {
                         </div>
                     </div>
                 </div>
-                <div className="anuncio">Anuncio Derecho</div>
+                <div className="anuncio"></div>
             </div>
         </div>
     );
