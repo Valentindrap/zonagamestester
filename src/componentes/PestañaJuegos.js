@@ -61,7 +61,7 @@ function PestañaJuegos() {
                         <iframe
                             src={juegoSeleccionado.url}
                             title={juegoSeleccionado.nombre}
-                        ></iframe>
+                        ></iframe >
                         <div className="Nombre-PestañaJuegos">
                             <div className="IzqNombre-PestañaJuegos">
                                 <p>{juegoSeleccionado.nombre}</p>
